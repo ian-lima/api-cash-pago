@@ -1,9 +1,19 @@
 # Api Cash Pago - Ian e Pedro
 
-Api feito em PHP Laravel
+## 💻 Techonologies used:
 
-Laravel 9 <br>
-PHP 8
+<table>
+  <tr>
+    <td>PHP</td>
+    <td>Laravel</td>
+    <td>MYSQL</td>
+  </tr>
+  <tr>
+    <td>8.1</td>
+    <td>9.0</td>
+    <td>8.0</td>
+  </tr>
+</table>
 
 ## Como rodar
 - Fazer um git clone ou Download Zip
