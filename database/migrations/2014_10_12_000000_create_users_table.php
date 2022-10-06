@@ -16,7 +16,7 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('name')->nullable(); // nullable é como se fosse um registro opcional, se não tiver esse elemento, não vai dar erro
             $table->string('type')->default('adm');
             $table->string('cpf');
             $table->string('email')->unique()->nullable();
@@ -25,6 +25,8 @@ return new class extends Migration
             $table->rememberToken()->nullable();
             $table->timestamps();
         }); 
+
+        // Banco de dados alimentado
             DB::table('users')->insert([
             'cpf' => '12345678911',
             'password' => '123456'

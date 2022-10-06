@@ -16,11 +16,20 @@ use App\Http\Controllers\Usuario;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
+
+// Endpoints criados para API
+Route::post('/logar', [Usuario::class, 'logar']);
 Route::post('/criarUsuario', [Usuario::class, 'criar']);
-Route::get('/listarTodosUsuarios', [Usuario::class, 'listarTudo']);
-Route::get('/listarUsuario/{Id}', [Usuario::class, 'listar']);
-Route::delete('/deletarUsuario/{Id}', [Usuario::class, 'deletar']);
+
+// Criar rota para fazer logout
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::get('/listarTodosUsuarios', [Usuario::class, 'listarTudo']);
+    Route::get('/listarUsuario/{Id}', [Usuario::class, 'listar']);
+    Route::delete('/deletarUsuario/{Id}', [Usuario::class, 'deletar']);
+    
+});
